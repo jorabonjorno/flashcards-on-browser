@@ -29,7 +29,7 @@ router.get('/register', async (req, res) => {
 router.post('/user/:id', async (req, res) => {
     const obj = req.body.res
    const user = await User.create(({ username: obj.name, email: obj.email, password: obj.password, score: 0}))
-    res.redirect('/themes/');
+    // res.redirect('/themes/');
 });
 
 router.get('/themes',(req, res) => {
