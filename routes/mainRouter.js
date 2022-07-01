@@ -48,6 +48,10 @@ router.get('/themes',(req, res) => {
     res.end(html);
 })
 
+// router.post('/theme/:id',(req,res)=> {
+//     const res =
+// }
+
 // router.get('/:themes/:question',(req,res) =>{
 //     const question = React.createElement(Question, { question });
 //     const html = ReactDOMServer.renderToStaticMarkup(question);

@@ -22,3 +22,18 @@ document.querySelector('.regForm').addEventListener('submit', async (event) =>{
         window.location.href = '/themes'
     }
 })
+
+document.querySelector('.idform').addEventListener('submit', async (event) =>{
+    event.preventDefault();
+    const answer = event.target.exampleInputLogin1.value
+    const result = await fetch(`/themes/${id}`,{
+        method:'POST',
+        body: JSON.stringify(answer),
+        headers: { 'Content-Type': 'application/json' },
+    })
+    // endRes = await result
+    // console.log(endRes)
+    // if(endRes.statusText === 'OK'){
+    //     window.location.href = '/themes'
+    // }
+})
