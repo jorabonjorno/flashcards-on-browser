@@ -1,25 +1,27 @@
-const Layout = require('./Layout');
 const React = require('react');
+const Layout = require('./Layout');
 
-module.exports = function Register({title}) {
+module.exports = function Register({ title }) {
   return (
-    <Layout title ="Registration">
-      <form method="GET" action="/user" className="regForm">
-        <div class="mb-3">
-          <label for="exampleInputLogin1" class="form-label">Логин</label>
-          <input type="text" class="form-control" id="exampleInputLogin1" />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Пароль</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" />
-        </div>
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-          <div id="emailHelp" class="form-text">Ваши данные не будут переданы третьим лицам </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Подтвердить</button>
-      </form>
+    <Layout title="Registration">
+      <div>
+        <form method="GET" action="/themes" className="regForm">
+          <div className="mb-2">
+            <label htmlFor="exampleInputLogin1" className="form-label">Логин</label>
+            <input type="text" className="form-control" id="exampleInputLogin1" />
+          </div>
+          <div className="mb-2">
+            <label htmlFor="exampleInputPassword1" className="form-label">Пароль</label>
+            <input type="password" className="form-control" id="exampleInputPassword1" />
+          </div>
+          <div className="mb-2">
+            <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
+            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+            <div id="emailHelp" className="form-text">Ваши данные не будут переданы третьим лицам </div>
+          </div>
+          <button type="submit" className="btn btn-primary">Подтвердить</button>
+        </form>
+      </div>
     </Layout>
   );
 };
