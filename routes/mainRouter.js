@@ -12,13 +12,13 @@ const { User } = require('../db/models');
 
 const router = express.Router();
 
-/* GET home page. */
-router.get('/', (req, res) => {
-   //с корневой перекидывает на
-    res.redirect('/register');
-});
+// /* GET home page. */
+// router.get('/', (req, res) => {
+//    //с корневой перекидывает на
+//     res.redirect('/registr');
+// });
 
-router.get('/register', async (req, res) => {
+router.get('/registration', async (req, res) => {
     const title = 'Регистрация'
     const register = React.createElement(Register, { title });
     const html = ReactDOMServer.renderToStaticMarkup(register);
@@ -27,11 +27,17 @@ router.get('/register', async (req, res) => {
     // res.redirect('/themes');
 });
 
-router.post('/user/', async (req, res) => {
+router.post('/user', async (req, res) => {
   const obj = req.body
     console.log(obj)
    const user = await User.create(({ user: obj.login, mail: obj.email, password: obj.password }))
-    res.redirect('/themes/');
+   // res.redirect('/themes')
+    res.send('ok')
+    // const them = React.createElement(Theme, { title });
+    // const html = ReactDOMServer.renderToStaticMarkup(them);
+    // res.end(html)
+
+
 });
 
 router.get('/themes',(req, res) => {

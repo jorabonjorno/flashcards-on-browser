@@ -1,7 +1,7 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Register({ title }) {
+module.exports = function Theme({ title }) {
   return (
     <Layout title="Themes">
       <div>

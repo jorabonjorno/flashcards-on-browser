@@ -16,5 +16,9 @@ document.querySelector('.regForm').addEventListener('submit', async (event) =>{
         body: JSON.stringify(obj),
         headers: { 'Content-Type': 'application/json' },
     })
-    // endRes = await result.json()
+    endRes = await result
+    console.log(endRes)
+    if(endRes.statusText === 'OK'){
+        window.location.href = '/themes'
+    }
 })
