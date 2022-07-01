@@ -2,9 +2,11 @@ const express = require('express');
 const ReactDOMServer = require('react-dom/server');
 const React = require('react');
 
-const Home = require('../views/Home');
-const Like = require('../views/Like')
-const { Post } = require('../db/models');
+const Layout = require('../view/Layout');
+const Register = require('../view/Register')
+// const Register = require('../view/Register')
+
+const { User } = require('../db/models');
 
 
 const router = express.Router();
@@ -38,19 +40,20 @@ router.get('/themes',(req, res) => {
     res.end(html);
 })
 
-router.get('/:themes/:question',(req,res) =>{
-    const question = React.createElement(Question, { question });
-    const html = ReactDOMServer.renderToStaticMarkup(question);
-    res.end(html);
-})
-
-router.post('/:themes/:question/:answer',async (req,res) =>{
-    const answer = req.body.res
-    const findAnswer = await Question.findOne({ where: { question: req.body.res} });
-    findPost === answer ? await User.increment('score', { by: 1 }) : await User.decrement('score', { by: 1 })
-})
-
-router.get('/results', async (req,res)=>{
-    const findUser = await User.findAll({ where: { question: req.body.res} });
-    res.send(`${findUser.name},поздравляем с завершением темы, ваш результат ${findUser.score}`)
-})
+// router.get('/:themes/:question',(req,res) =>{
+//     const question = React.createElement(Question, { question });
+//     const html = ReactDOMServer.renderToStaticMarkup(question);
+//     res.end(html);
+// })
+//
+// router.post('/:themes/:question/:answer',async (req,res) =>{
+//     const answer = req.body.res
+//     const findAnswer = await Question.findOne({ where: { question: req.body.res} });
+//     findPost.toLowerCase().includes(answer.toLowerCase()) ? await User.decrement('score', {by: 1}) : await User.increment('score', {by: 1})
+// })
+//
+// router.get('/results', async (req,res)=>{
+//     const findUser = await User.findAll({ where: { question: req.body.res} });
+//     res.send(`${findUser.name},поздравляем с завершением темы, ваш результат ${findUser.score}`)
+// })
+module.exports = router
