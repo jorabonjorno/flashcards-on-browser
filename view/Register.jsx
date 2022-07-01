@@ -4,7 +4,7 @@ const React = require('react');
 module.exports = function Register({title}) {
   return (
     <Layout title ="Registration">
-      <form method="GET" action="/themes">
+      <form method="GET" action="/user" className="regForm">
         <div class="mb-3">
           <label for="exampleInputLogin1" class="form-label">Логин</label>
           <input type="text" class="form-control" id="exampleInputLogin1" />
