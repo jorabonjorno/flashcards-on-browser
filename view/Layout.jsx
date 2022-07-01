@@ -22,9 +22,9 @@ module.exports = function Layout({ title, children }) {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav">
-                <a className="nav-link" href="#">Заглушка</a>
-                <a className="nav-link" href="#">Заглушка</a>
-                <a className="nav-link" href="#">Заглушка</a>
+                <a className="nav-link" href="#">Домой</a>
+                <a className="nav-link" href="#">Темы карт</a>
+                <a className="nav-link" href="#">Регистрация</a>
               </div>
             </div>
           </div>

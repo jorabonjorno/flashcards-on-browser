@@ -3,6 +3,7 @@ const ReactDOMServer = require('react-dom/server');
 const React = require('react');
 
 const Layout = require('../view/Layout');
+const Theme = require('../view/Theme');
 const Register = require('../view/Register')
 // const Register = require('../view/Register')
 
