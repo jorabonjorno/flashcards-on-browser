@@ -27,10 +27,11 @@ router.get('/register', async (req, res) => {
     // res.redirect('/themes');
 });
 
-router.post('/user/:id', async (req, res) => {
-    const obj = req.body.res
-   const user = await User.create(({ username: obj.name, email: obj.email, password: obj.password, score: 0}))
-    // res.redirect('/themes/');
+router.post('/user/', async (req, res) => {
+  const obj = req.body
+    console.log(obj)
+   const user = await User.create(({ user: obj.login, mail: obj.email, password: obj.password }))
+    res.redirect('/themes/');
 });
 
 router.get('/themes',(req, res) => {

@@ -5,7 +5,7 @@ module.exports = function Register({ title }) {
   return (
     <Layout title="Registration">
       <div>
-        <form method="GET" action="/register">
+        <form method="GET" action="/themes" className="regForm">
           <div className="mb-2">
             <label htmlFor="exampleInputLogin1" className="form-label">Логин</label>
             <input type="text" className="form-control" id="exampleInputLogin1" />

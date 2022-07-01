@@ -1,16 +1,20 @@
-const resalt = await fetch('/register',{
-    method: 'GET',
-})
+// const resalt = await fetch('/register',{
+//     method: 'GET',
+// })
 
-
-
-document.querySelector('.userReg').addEventListener('click', async (event) =>{
+document.querySelector('.regForm').addEventListener('submit', async (event) =>{
     event.preventDefault();
-    const res = event.target.className
-    const result = await fetch(`/user/${res.id}`,{
+    const login = event.target.exampleInputLogin1.value
+    // console.log(login)
+    const password = event.target.exampleInputPassword1.value
+    // console.log(password)
+    const email = event.target.exampleInputEmail1.value
+    // console.log(email)
+    let obj = {login, password, email}
+    const result = await fetch(`/user`,{
         method:'POST',
-        body: JSON.stringify(res),
+        body: JSON.stringify(obj),
         headers: { 'Content-Type': 'application/json' },
     })
-    endRes = await result.json()
+    // endRes = await result.json()
 })
