@@ -1,16 +1,16 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Register({ title }) {
+module.exports = function Theme({ title, findThemes }) {
+  { console.log('=======', findThemes); }
   return (
-    <Layout title="Themes">
+    <Layout title={title}>
       <div>
         <form method="GET" action="/themes">
           <nav className="nav flex-column">
-            <a className="nav-link" href="/themes/1">Космос</a>
-            <a className="nav-link" href="/themes/2">Мультипликационные фильмы</a>
-            <a className="nav-link" href="/themes/3">Бригада</a>
-            <a className="nav-link" href="/themes/4">Поттер</a>
+            {/* {findThemes[0].title} */}
+            {findThemes
+              .map((theme) => <a className="nav-link" href={`/question/${theme.id}`}>{theme.title}</a>) }
           </nav>
         </form>
       </div>
